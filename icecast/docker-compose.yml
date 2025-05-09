@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  icecast:
+    image: infiniteproject/icecast
+    ports:
+      - "8000:8000"
+    environment:
+      - ICECAST_SOURCE_PASSWORD=hackme
+      - ICECAST_RELAY_PASSWORD=relay
+      - ICECAST_ADMIN_PASSWORD=admin
+      - ICECAST_PASSWORD=hackme
+    restart: unless-stopped
+
+  ffmpeg:
+    image: jrottenberg/ffmpeg:4.4-ubuntu
+    volumes:
+      - ./audio.mp3:/audio.mp3
+      - ./ffmpeg-source.sh:/ffmpeg-source.sh
+    depends_on:
+      - icecast
+    entrypoint: ["bash", "/ffmpeg-source.sh"]
