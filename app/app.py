@@ -3,6 +3,7 @@ import subprocess
 import threading
 import logging
 import time
+from mail import send_mail
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -33,6 +34,7 @@ def monitor_stream(stream, detected_problems):
         if "silence_start" in line:
             detected_problems[stream] = 'Silêncio detectado'
             logger.info(f"[{stream}] Silêncio detectado. Início: {line}")
+            send_mail(stream)
 
         elif "silence_end" in line:
             logger.info(f"[{stream}] Silêncio terminou. {line}")
