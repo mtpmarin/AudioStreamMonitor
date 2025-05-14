@@ -33,19 +33,23 @@ O monitoramento é feito em tempo real em múltiplos streams. A principal detec�
 
 ## Como Usar
 
-1. Crie um arquivo `config.py` com as URLs dos streams, como no exemplo abaixo:
+1. Crie um arquivo `config.py` com as URLs dos streams e a configuração do SMTP, como no exemplo abaixo:
 
    ```python
    stream1 = 'http://stream-url-1'
    stream2 = 'http://stream-url-2'
    stream3 = 'http://stream-url-3'
    stream4 = 'http://stream-url-4'
+
+    smtp_server = 'smtp.server.com'
+    smtp_port = 25
+    smtp_username = 'streams@server.com'
+    to_addr = 'mpmarin@server.com'
     ```
 
-2. Crie a imagem Docker e a inicie:
+2. Inicie o projeto:
     ```bash
-    docker build . -t image:tag 
-    docker run -d image:tag
+    docker compose up -d
     ```
 
 
