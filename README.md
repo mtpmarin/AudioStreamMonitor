@@ -16,6 +16,8 @@ O monitoramento é feito em tempo real em múltiplos streams. A principal detec�
 - `threading`: para executar múltiplos monitoramentos de forma simultânea.
 - `logging`: para gerar logs durante o processo de monitoramento.
 - `time`: para controle de intervalos de verificação e monitoramento contínuo.
+- `influxdb-client`: para enviar logs ao InfluxDB
+- `os`: para importação de variáveis de ambiente para o código
 
 ### Estrutura do código
 
@@ -46,6 +48,9 @@ O monitoramento é feito em tempo real em múltiplos streams. A principal detec�
     smtp_username = 'streams@server.com'
     to_addr = 'mpmarin@server.com'
     ```
+    >Não necessariamente precisa ser 4 URIs
+
+    >Necessário alterar o código para incluir autenticação ao SMTP
 
 2. Inicie o projeto:
     ```bash
@@ -68,7 +73,6 @@ Os logs são exibidos no seguinte formato:
 2025-05-09 12:00:00,000 - [http://stream-url-1] Silêncio detectado. Início: 2025-05-09 12:00:00
 2025-05-09 12:01:00,000 - [http://stream-url-2] Silêncio terminou. 2025-05-09 12:01:00
 ```
-
 
 
 Licença
