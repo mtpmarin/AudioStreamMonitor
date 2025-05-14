@@ -23,4 +23,4 @@ Este ambiente Docker foi criado para realizar testes locais com streaming de áu
 
 * Interface do Icecast: [http://localhost:8000](http://localhost:8000)
 
-> Este ambiente é apenas pwwwwwwwwwwwwwwwwwwwwwwwwwwwwara testes locais e não deve ser usado em produção.
+> Este ambiente é apenas para testes locais e não deve ser usado em produção.
