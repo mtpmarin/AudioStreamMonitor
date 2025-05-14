@@ -116,10 +116,10 @@ def monitor_multiple_streams(stream_urls):
                 
 
 STREAM_URLS = [
-    config.fmandroid,
-    config.fmios,
-    config.parceiros,
-    config.teste
+    config.stream1,
+    config.stream2,
+    config.stream3,
+    config.stream4
 ]
 
 monitor_multiple_streams(STREAM_URLS)
